@@ -15,4 +15,4 @@ const menuButton = document.querySelector('.menu-button');
 menuButton.addEventListener('click', () => toggleMenu());
 
 
-TweenMax.to(".menu", 10, {x: 0, ease:Elastic.easeOut});
+// TweenMax.to(".menu", 10, {x: 0, ease:Elastic.easeOut});
