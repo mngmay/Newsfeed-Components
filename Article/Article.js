@@ -1,5 +1,25 @@
 //Refactor original assignment using functional components only
 
+function createArticle() {
+  //define new elements
+  const article = document.createElement("div");
+  const title = document.createElement("h2");
+  const date = document.createElement("p");
+  const content = document.createElement("div");
+  const expandBtn = document.createElement("button");
+  const readBtn = document.createElement("button");
+
+  //set up structure of elements
+
+  //set class names
+
+  //set text content
+
+  //button events
+
+  return panel;
+}
+
 //Code from the original assignment:
 // // Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
