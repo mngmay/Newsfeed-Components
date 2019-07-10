@@ -88,7 +88,7 @@ const articles = document.querySelector(".articles");
 
 //test article creation
 articles.appendChild(
-  createArticle("Refactored Title", "Test Content", "July, 10th, 2019")
+  createArticle("Refactored Title", ["Test", "Test"], "July, 10th, 2019")
 );
 
 //grab data from JSON
@@ -102,17 +102,24 @@ function createArticle(title, content, date) {
   const articleBar = document.createElement("div");
   const articleTitle = document.createElement("h2");
   const articleDate = document.createElement("p");
-  const articleContent = document.createElement("div");
+  const articleContent = content.map(p => {
+    let articleP = document.createElement("p");
+    articleP.textContent = p;
+    return articleP;
+  });
+
   const btnBar = document.createElement("div");
   const expandBtn = document.createElement("button");
   const removeBtn = document.createElement("button"); //for stretch button to make articles disappear
 
   //set up structure of elements
   article.appendChild(articleBar);
-  article.appendChild(articleContent);
   articleBar.appendChild(articleTitle);
   articleBar.appendChild(articleDate);
   articleBar.appendChild(btnBar);
+  articleContent.forEach(art => {
+    article.appendChild(art);
+  });
   btnBar.appendChild(expandBtn);
   btnBar.appendChild(removeBtn);
 
@@ -120,8 +127,9 @@ function createArticle(title, content, date) {
   article.classList.add("articles", "article");
   articleTitle.classList.add("h2");
   articleDate.classList.add("date");
-  articleContent.classList.add("hide");
-  articleContent.classList.add("content");
+  articleContent.forEach(art => {
+    art.classList.add("content", "hide");
+  });
   expandBtn.classList.add("expandButton");
   removeBtn.classList.add("removeButton");
 
@@ -129,7 +137,6 @@ function createArticle(title, content, date) {
   expandBtn.textContent = "Expand";
   removeBtn.textContent = "Remove";
   articleTitle.textContent = title;
-  articleContent.textContent = content;
   articleDate.textContent = date;
 
   //button events
@@ -141,13 +148,15 @@ function createArticle(title, content, date) {
     let buttons = document.querySelectorAll(".expandButton");
     buttons.forEach(button => (button.textContent = "Expand"));
 
-    //open the relevant article
-    articleContent.classList.toggle("hide");
+    //open the relevant article and change button text of the article to Hide
+    articleContent.forEach(p => p.classList.toggle("hide"));
 
-    if (!articleContent.classList.contains("hide")) {
-      expandBtn.textContent = "Hide";
-      article.classList.add("article-open");
-    }
+    articleContent.forEach(p => {
+      if (!p.classList.contains("hide")) {
+        expandBtn.textContent = "Hide";
+        article.classList.add("article-open");
+      }
+    });
   });
 
   removeBtn.addEventListener("click", () => {
