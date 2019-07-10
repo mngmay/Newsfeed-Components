@@ -2,33 +2,46 @@
 
 const articles = document.querySelector(".articles");
 
-articles.appendChild(createArticle("test title", "testcontent"));
+articles.appendChild(createArticle("test title", "testcontent", "7/11/2019"));
 
-function createArticle(title, content) {
+function createArticle(title, content, date) {
   //define new elements
   const article = document.createElement("div");
+  const articleBar = document.createElement("div");
   const articleTitle = document.createElement("h2");
-  const date = document.createElement("p");
+  const articleDate = document.createElement("p");
   const articleContent = document.createElement("div");
+  const btnBar = document.createElement("div");
   const expandBtn = document.createElement("button");
   const removeBtn = document.createElement("button"); //for stretch button to make articles disappear
 
   //set up structure of elements
-  article.appendChild(articleTitle);
+  article.appendChild(articleBar);
   article.appendChild(articleContent);
-  article.appendChild(date);
-  article.appendChild(expandBtn);
-  article.appendChild(removeBtn);
+  articleBar.appendChild(articleTitle);
+  articleBar.appendChild(articleDate);
+  articleBar.appendChild(btnBar);
+  btnBar.appendChild(expandBtn);
+  btnBar.appendChild(removeBtn);
+  console.log(articleBar);
+  console.log(article);
 
   //set class names
+  article.classList.add("article");
+  articleTitle.classList.add("h2");
+  articleDate.classList.add("date");
 
   //set text content
   expandBtn.textContent = "Expand";
   removeBtn.textContent = "Remove";
   articleTitle.textContent = title;
   articleContent.textContent = content;
+  articleDate.textContent = date;
 
   //button events
+  expandBtn.addEventListener("click", () => {
+    articleContent.style.display = "none";
+  });
 
   return article;
 }
