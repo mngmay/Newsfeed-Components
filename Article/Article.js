@@ -140,10 +140,11 @@ function createArticle(title, content, date) {
 
     //open the relevant article
     articleContent.classList.toggle("hide");
-    article.classList.toggle("article-open");
+    console.log(article);
 
     if (!articleContent.classList.contains("hide")) {
       expandBtn.textContent = "Hide";
+      article.classList.add("article-open");
     } else {
       expandBtn.textContent = "Expand";
     }
