@@ -1,5 +1,9 @@
 //Refactor original assignment using functional components only
 
+const articles = document.querySelector(".articles");
+
+articles.appendChild(createArticle("test title", "testcontent"));
+
 function createArticle() {
   //define new elements
   const article = document.createElement("div");
@@ -7,9 +11,15 @@ function createArticle() {
   const date = document.createElement("p");
   const content = document.createElement("div");
   const expandBtn = document.createElement("button");
-  const readBtn = document.createElement("button");
+  const readBtn = document.createElement("button"); //for stretch button to make articles disappear
 
   //set up structure of elements
+  article.appendChild(title);
+  article.appendChild(content);
+  article.appendChild(date);
+  article.appendChild(content);
+  article.appendChild(expandBtn);
+  article.appendChild(readBtn);
 
   //set class names
 
@@ -17,7 +27,7 @@ function createArticle() {
 
   //button events
 
-  return panel;
+  return article;
 }
 
 //Code from the original assignment:
