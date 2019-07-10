@@ -137,16 +137,16 @@ function createArticle(title, content, date) {
     //close all articles so multiple cannot be open at the same time
     let allArticles = document.querySelectorAll(".article");
     allArticles.forEach(article => article.classList.remove("article-open"));
+    //when closed, expand buttons should say Expand
+    let buttons = document.querySelectorAll(".expandButton");
+    buttons.forEach(button => (button.textContent = "Expand"));
 
     //open the relevant article
     articleContent.classList.toggle("hide");
-    console.log(article);
 
     if (!articleContent.classList.contains("hide")) {
       expandBtn.textContent = "Hide";
       article.classList.add("article-open");
-    } else {
-      expandBtn.textContent = "Expand";
     }
   });
 
