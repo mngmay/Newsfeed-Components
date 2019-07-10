@@ -4,26 +4,29 @@ const articles = document.querySelector(".articles");
 
 articles.appendChild(createArticle("test title", "testcontent"));
 
-function createArticle() {
+function createArticle(title, content) {
   //define new elements
   const article = document.createElement("div");
-  const title = document.createElement("h2");
+  const articleTitle = document.createElement("h2");
   const date = document.createElement("p");
-  const content = document.createElement("div");
+  const articleContent = document.createElement("div");
   const expandBtn = document.createElement("button");
-  const readBtn = document.createElement("button"); //for stretch button to make articles disappear
+  const removeBtn = document.createElement("button"); //for stretch button to make articles disappear
 
   //set up structure of elements
-  article.appendChild(title);
-  article.appendChild(content);
+  article.appendChild(articleTitle);
+  article.appendChild(articleContent);
   article.appendChild(date);
-  article.appendChild(content);
   article.appendChild(expandBtn);
-  article.appendChild(readBtn);
+  article.appendChild(removeBtn);
 
   //set class names
 
   //set text content
+  expandBtn.textContent = "Expand";
+  removeBtn.textContent = "Remove";
+  articleTitle.textContent = title;
+  articleContent.textContent = content;
 
   //button events
 
