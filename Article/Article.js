@@ -27,9 +27,11 @@ function createArticle(title, content, date) {
   btnBar.appendChild(removeBtn);
 
   //set class names
-  article.classList.add("article");
+  article.classList.add("articles", "article");
   articleTitle.classList.add("h2");
   articleDate.classList.add("date");
+  articleContent.classList.add("hide");
+  articleContent.classList.add("content");
   expandBtn.classList.add("expandButton");
   removeBtn.classList.add("removeButton");
 
@@ -42,7 +44,8 @@ function createArticle(title, content, date) {
 
   //button events
   expandBtn.addEventListener("click", () => {
-    articleContent.style.display = "none";
+    articleContent.classList.toggle("hide");
+    article.classList.toggle("article-open");
   });
 
   return article;

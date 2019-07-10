@@ -87,10 +87,8 @@
   margin: 0;
   font-size: 14px;
 }
-.article .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.article .content {
+  padding: 20px;
 }
 .article .expandButton {
   position: absolute;
@@ -110,6 +108,9 @@
   color: grey;
   cursor: pointer;
   background-color: white;
+}
+.article .hide {
+  display: none;
 }
 .article-open {
   height: 400px;
