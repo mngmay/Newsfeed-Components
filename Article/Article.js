@@ -87,9 +87,9 @@ const articleData = [
 const articles = document.querySelector(".articles");
 
 //test article creation
-articles.appendChild(
-  createArticle("Refactored Title", ["Test", "Test"], "July, 10th, 2019")
-);
+// articles.appendChild(
+//   createArticle("Refactored Title", ["Test", "Test"], "July, 10th, 2019")
+// );
 
 //grab data from JSON
 articleData.forEach(data => {
@@ -107,7 +107,6 @@ function createArticle(title, content, date) {
     articleP.textContent = p;
     return articleP;
   });
-
   const btnBar = document.createElement("div");
   const expandBtn = document.createElement("button");
   const removeBtn = document.createElement("button"); //for stretch button to make articles disappear
