@@ -48,6 +48,10 @@ function createArticle(title, content, date) {
     article.classList.toggle("article-open");
   });
 
+  removeBtn.addEventListener("click", () => {
+    article.style.display = "none";
+  });
+
   return article;
 }
 
