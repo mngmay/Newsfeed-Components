@@ -2,7 +2,9 @@
 
 const articles = document.querySelector(".articles");
 
-articles.appendChild(createArticle("test title", "testcontent", "7/11/2019"));
+articles.appendChild(
+  createArticle("Refactored Title", "Test Content", "July, 10th, 2019")
+);
 
 function createArticle(title, content, date) {
   //define new elements
@@ -23,13 +25,13 @@ function createArticle(title, content, date) {
   articleBar.appendChild(btnBar);
   btnBar.appendChild(expandBtn);
   btnBar.appendChild(removeBtn);
-  console.log(articleBar);
-  console.log(article);
 
   //set class names
   article.classList.add("article");
   articleTitle.classList.add("h2");
   articleDate.classList.add("date");
+  expandBtn.classList.add("expandButton");
+  removeBtn.classList.add("removeButton");
 
   //set text content
   expandBtn.textContent = "Expand";
