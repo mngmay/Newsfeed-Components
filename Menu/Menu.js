@@ -26,9 +26,7 @@ const span = document.querySelector(".close");
 // When the user clicks on the button, open the modal
 addArticle.onclick = function() {
   modal.style.display = "block";
-  menu.style.display = "none";
-  console.log(addArticle);
-  console.log(modal);
+  menu.classList.toggle("menu--open");
 };
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
