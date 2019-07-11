@@ -24,6 +24,7 @@
         <li>What's New</li>
         <li>Tech Trends</li>
         <li>Music</li>
+        <li class="addArticle">Add Article</li>
         <li>Log Out</li>
       </ul>
     </div>
@@ -262,6 +263,27 @@
         </p>
         <span class="expandButton"></span>
       </div> -->
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="modal-title">
+            <div class="modal-heading">Title:</div>
+            <input type="text" name="title" size="50" />
+          </div>
+          <div class="modal-article">
+            <div class="modal-heading">Article:</div>
+            <input
+              type="text"
+              name="article"
+              style="width: 500px; height: 150px;"
+            />
+          </div>
+          <button class="submitArticle">Submit</button>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
