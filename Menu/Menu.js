@@ -15,7 +15,7 @@ menuButton.addEventListener("click", () => toggleMenu());
 
 // TweenMax.to(".menu", 10, {x: 0, ease:Elastic.easeOut});
 
-//Modal for adding articles
+// <----- Begin modal for new articles
 // Get the modal
 const modal = document.querySelector(".modal");
 // Get the button that opens the modal
@@ -40,3 +40,5 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 };
+
+//End modal ------>
