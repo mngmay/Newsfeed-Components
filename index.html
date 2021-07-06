@@ -24,11 +24,12 @@
         <li>What's New</li>
         <li>Tech Trends</li>
         <li>Music</li>
+        <li class="addArticle">Add Article</li>
         <li>Log Out</li>
       </ul>
     </div>
     <div class="articles">
-      <div class="article">
+      <!-- <div class="article">
         <h2>Lambda School Students: "We're the best!"</h2>
         <p class="date">Nov 5th, 2017</p>
 
@@ -261,10 +262,28 @@
           pabst yuccie gentrify. Pop-up poke air plant roof party.
         </p>
         <span class="expandButton"></span>
+      </div> -->
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form class="modal-form"></form>
+          <div class="modal-title">
+            <div class="modal-heading">Title:</div>
+            <input type="text" name="title" size="100" />
+          </div>
+          <div class="modal-article">
+            <div class="modal-heading">Article:</div>
+            <textarea name="message" rows="30" cols="100"></textarea>
+          </div>
+          <button class="submitArticle">Submit</button>
+        </form>
+        </div>
       </div>
     </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
   </body>
 </html>
